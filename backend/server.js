@@ -65,15 +65,15 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT || 5001;
 
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(process.env.SUPABASE_URI)
   .then(() => {
-    console.log("MongoDB connected successfully");
+    console.log("SupabaseDB connected successfully");
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
     });
   })
   .catch((err) => {
-    console.error("MongoDB connection failed:", err.message);
+    console.error("SuperbaseDB connection failed:", err.message);
     process.exit(1);
   });
 
