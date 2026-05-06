@@ -63,6 +63,10 @@ app.get("/", (req, res) => {
 
 // --- Connect to MongoDB, then start server ---
 const PORT = process.env.PORT || 5001;
+if (!process.env.MONGO_URI) {
+  console.error("MONGO_URI is not defined!");
+  process.exit(1);
+}
 
 mongoose
   .connect(process.env.MONGO_URI)
