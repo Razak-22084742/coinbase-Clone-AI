@@ -1,6 +1,7 @@
 // server.js — Entry point for the Crypto App backend
 // Connects to MongoDB and starts the Express server
 
+console.log("🚀 Server starting...");
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
@@ -73,7 +74,7 @@ mongoose
       console.log(`Server running on port ${PORT}`);
     });
   })
-  .catch((err) => {
-    console.error("MongoDB connection failed:", err.message);
-    process.exit(1);
-  });
+ .catch((err) => {
+  console.error("❌ MongoDB FULL ERROR:", err);
+  process.exit(1);
+});
