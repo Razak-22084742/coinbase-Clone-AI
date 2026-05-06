@@ -65,7 +65,7 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT || 5001;
 
 mongoose
-  .connect(process.env.SUPABASE_URI)
+  .connect(process.env.SUPABASE_URL)
   .then(() => {
     console.log("SupabaseDB connected successfully");
     app.listen(PORT, () => {
